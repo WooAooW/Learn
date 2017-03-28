@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-init-method="init" default-destroy-method="dispose"
+       xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+                     
+    <bean id="str1" class="java.lang.String">
+        <constructor-arg value="this is a String"></constructor-arg>
+    </bean>
+    
+    <bean id="str2" class="java.lang.String"></bean>
+    
+    <bean id="user1" scope="singleton" class="com.heleeos.bean.User" init-method="onCreate" destroy-method="onDestroy">
+        <property name="id" value="#{ T(java.lang.Math).random() * 100.0 }"/>
+        <property name="username" value="单例用户"/>
+    </bean>
+    
+    <bean id="user2" scope="prototype" class="com.heleeos.bean.User" init-method="onCreate" destroy-method="onDestroy">
+        <property name="id" value="#{ T(java.lang.Math).random() * 100.0 }"/>
+        <property name="username" value="非单例用户"/>
+    </bean>
+    
+    <!-- 采用指定的初始化和销毁,onCreate(),onDestroy() -->
+    <bean id="testBean1" class="com.heleeos.bean.LifecycleBean" init-method="onCreate" destroy-method="onDestroy">
+        <property name="name" value="Bean1"/>
+    </bean>
+    
+    <!-- 采用默认的初始化和销毁,init(),dispose() -->
+    <bean id="testBean2" class="com.heleeos.bean.LifecycleBean">
+        <property name="name" value="Bean2"/>
+    </bean>
+    
+    <!--  初始化和销毁都采用同一个方法,只会被调用一次 -->
+    <bean id="testBean3" class="com.heleeos.bean.LifecycleBeanSame" init-method="afterPropertiesSet" destroy-method="destroy">
+        <property name="name" value="Bean3"/>
+    </bean>
+    
+    <!-- 当参数构造和属性构造同时存在时候 -->
+    <bean id="testBean4" class="com.heleeos.bean.LifecycleBean" init-method="afterPropertiesSet" destroy-method="destroy">
+        <constructor-arg name="name" value="参数构造"></constructor-arg>
+        <property name="name" value="属性构造"/>
+    </bean>
+    
+    <!-- lifecycle 接口的一种实现 -->
+    <bean id="myLifecycle" class="com.heleeos.bean.MyLifecycle"/>
+    
+    <!-- smartLifecycle 接口的一种实现 -->
+    <bean id="mySmartLifecycle" class="com.heleeos.bean.MySmartLifecycle"/>
+    
+    <!-- 混合所有生命周期的实现 -->
+    <bean id="mySmartLifecycle2" class="com.heleeos.bean.MySmartLifecycle2" init-method="onCreate" destroy-method="onDestroy">
+        <constructor-arg name="name" value="测试"/>
+        <property name="name" value="test"/>
+    </bean>
+    
+    <!-- 此时创建的是工厂,而不是原来的bean -->
+    <bean id="diyBean" class="com.heleeos.bean.MyFactoryBean"/>
+    <!-- <bean class="com.heleeos.bean.DiyBean"/> -->
+    
+</beans>
