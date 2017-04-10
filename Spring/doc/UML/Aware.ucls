@@ -2,7 +2,7 @@
 <class-diagram version="1.1.13" icons="true" automaticImage="JPEG" always-add-relationships="false" 
   generalizations="false" realizations="false" associations="false" dependencies="false" nesting-relationships="false" 
   router="FAN">  
-  <interface id="1" language="java" name="org.springframework.beans.factory.Aware" project="LearnSpring" 
+  <interface id="1" language="java" name="org.springframework.beans.factory.Aware" project="learn-spring" 
     file="E:/MVNRepository/org/springframework/spring-beans/4.3.6.RELEASE/spring-beans-4.3.6.RELEASE.jar" binary="true" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="638" y="297"/>    
@@ -12,7 +12,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </interface>  
-  <interface id="2" language="java" name="org.springframework.context.ApplicationContextAware" project="LearnSpring" 
+  <interface id="2" language="java" name="org.springframework.context.ApplicationContextAware" project="learn-spring" 
     file="E:/MVNRepository/org/springframework/spring-context/4.3.6.RELEASE/spring-context-4.3.6.RELEASE.jar" 
     binary="true" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="245" y="105"/>    
@@ -23,7 +23,7 @@
     </display>  
   </interface>  
   <interface id="3" language="java" name="org.springframework.context.ApplicationEventPublisherAware" 
-    project="LearnSpring" 
+    project="learn-spring" 
     file="E:/MVNRepository/org/springframework/spring-context/4.3.6.RELEASE/spring-context-4.3.6.RELEASE.jar" 
     binary="true" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="500" y="105"/>    
@@ -33,7 +33,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </interface>  
-  <interface id="4" language="java" name="org.springframework.beans.factory.BeanClassLoaderAware" project="LearnSpring" 
+  <interface id="4" language="java" name="org.springframework.beans.factory.BeanClassLoaderAware" project="learn-spring" 
     file="E:/MVNRepository/org/springframework/spring-beans/4.3.6.RELEASE/spring-beans-4.3.6.RELEASE.jar" binary="true" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="719" y="105"/>    
@@ -43,7 +43,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </interface>  
-  <interface id="5" language="java" name="org.springframework.beans.factory.BeanFactoryAware" project="LearnSpring" 
+  <interface id="5" language="java" name="org.springframework.beans.factory.BeanFactoryAware" project="learn-spring" 
     file="E:/MVNRepository/org/springframework/spring-beans/4.3.6.RELEASE/spring-beans-4.3.6.RELEASE.jar" binary="true" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1069" y="105"/>    
@@ -53,7 +53,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </interface>  
-  <interface id="6" language="java" name="org.springframework.beans.factory.BeanNameAware" project="LearnSpring" 
+  <interface id="6" language="java" name="org.springframework.beans.factory.BeanNameAware" project="learn-spring" 
     file="E:/MVNRepository/org/springframework/spring-beans/4.3.6.RELEASE/spring-beans-4.3.6.RELEASE.jar" binary="true" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1064" y="198"/>    
@@ -63,7 +63,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </interface>  
-  <interface id="7" language="java" name="org.springframework.jca.context.BootstrapContextAware" project="LearnSpring" 
+  <interface id="7" language="java" name="org.springframework.jca.context.BootstrapContextAware" project="learn-spring" 
     file="E:/MVNRepository/org/springframework/spring-tx/4.3.6.RELEASE/spring-tx-4.3.6.RELEASE.jar" binary="true" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1083" y="297"/>    
@@ -73,7 +73,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </interface>  
-  <interface id="8" language="java" name="org.springframework.context.EmbeddedValueResolverAware" project="LearnSpring" 
+  <interface id="8" language="java" name="org.springframework.context.EmbeddedValueResolverAware" project="learn-spring" 
     file="E:/MVNRepository/org/springframework/spring-context/4.3.6.RELEASE/spring-context-4.3.6.RELEASE.jar" 
     binary="true" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1104" y="409"/>    
@@ -83,7 +83,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </interface>  
-  <interface id="9" language="java" name="org.springframework.context.EnvironmentAware" project="LearnSpring" 
+  <interface id="9" language="java" name="org.springframework.context.EnvironmentAware" project="learn-spring" 
     file="E:/MVNRepository/org/springframework/spring-context/4.3.6.RELEASE/spring-context-4.3.6.RELEASE.jar" 
     binary="true" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1069" y="558"/>    
@@ -93,7 +93,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </interface>  
-  <interface id="10" language="java" name="org.springframework.context.annotation.ImportAware" project="LearnSpring" 
+  <interface id="10" language="java" name="org.springframework.context.annotation.ImportAware" project="learn-spring" 
     file="E:/MVNRepository/org/springframework/spring-context/4.3.6.RELEASE/spring-context-4.3.6.RELEASE.jar" 
     binary="true" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="882" y="105"/>    
@@ -104,7 +104,7 @@
     </display>  
   </interface>  
   <interface id="11" language="java" name="org.springframework.context.weaving.LoadTimeWeaverAware" 
-    project="LearnSpring" 
+    project="learn-spring" 
     file="E:/MVNRepository/org/springframework/spring-context/4.3.6.RELEASE/spring-context-4.3.6.RELEASE.jar" 
     binary="true" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="718" y="565"/>    
@@ -114,7 +114,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </interface>  
-  <interface id="12" language="java" name="org.springframework.context.MessageSourceAware" project="LearnSpring" 
+  <interface id="12" language="java" name="org.springframework.context.MessageSourceAware" project="learn-spring" 
     file="E:/MVNRepository/org/springframework/spring-context/4.3.6.RELEASE/spring-context-4.3.6.RELEASE.jar" 
     binary="true" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="473" y="565"/>    
@@ -125,7 +125,7 @@
     </display>  
   </interface>  
   <interface id="13" language="java" name="org.springframework.jmx.export.notification.NotificationPublisherAware" 
-    project="LearnSpring" 
+    project="learn-spring" 
     file="E:/MVNRepository/org/springframework/spring-context/4.3.6.RELEASE/spring-context-4.3.6.RELEASE.jar" 
     binary="true" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="239" y="565"/>    
@@ -135,7 +135,7 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </interface>  
-  <interface id="14" language="java" name="org.springframework.context.ResourceLoaderAware" project="LearnSpring" 
+  <interface id="14" language="java" name="org.springframework.context.ResourceLoaderAware" project="learn-spring" 
     file="E:/MVNRepository/org/springframework/spring-context/4.3.6.RELEASE/spring-context-4.3.6.RELEASE.jar" 
     binary="true" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="251" y="409"/>    
@@ -146,7 +146,7 @@
     </display>  
   </interface>  
   <interface id="15" language="java" name="org.springframework.scheduling.quartz.SchedulerContextAware" 
-    project="LearnSpring" 
+    project="learn-spring" 
     file="E:/MVNRepository/org/springframework/spring-context-support/4.3.6.RELEASE/spring-context-support-4.3.6.RELEASE.jar" 
     binary="true" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="247" y="297"/>    
