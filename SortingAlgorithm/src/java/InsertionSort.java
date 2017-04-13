@@ -2,13 +2,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 /**
- * 冒泡排序.
- * 核心思想: 数字大的往后靠.
- * 
- * @see https://heleeos.com/blog/sorting-algorithm-theory.html#1冒泡排序
- * @author liyu
+ * 插入排序.
+ * 核心思想: 选择小的元素插入到前面.
  */
-public class BubbleSort {
+public class InsertionSort {
 
     public static void main(String[] args) {
         List<Integer> data = getData(20);
@@ -16,27 +13,25 @@ public class BubbleSort {
         System.out.println();
         
         int size = data.size();
-        for(int i = 0; i < size; i++) {
-            boolean change = false;
-            int maxIndex = size - i - 1;
+        for(int i = 1; i < size; i++) {
+            int number = data.get(i);
             
-            //把最大的数字往后移
-            for(int index = 0; index < maxIndex; index++) {
-                int a = data.get(index);
-                int b = data.get(index + 1);
-                if(a > b) {
-                    data.set(index, b);
-                    data.set(index + 1, a);
-                    change = true;
+            //把当前的元素插入到已排序元素的对应位置
+            for(int index = i - 1; index >= 0; index--) {
+                if(number < data.get(index)) {
+                    data.set(index + 1, data.get(index));
+                    if(index == 0) {
+                        data.set(index, number);
+                    }
+                } else {
+                    data.set(index + 1, number);
+                    break;
                 }
             }
             
-            System.out.printf("第 %s 次:", i + 1);
+            System.out.printf("第 %s 次:", i);
             data.forEach(num -> System.out.printf("%s ", num));
             System.out.println();
-            if(change == false) {
-                break;
-            }
         }
         
         data.forEach(num -> System.out.printf("%s,", num));

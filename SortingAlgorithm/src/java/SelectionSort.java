@@ -5,6 +5,9 @@ import java.util.List;
 /**
  * 选择排序.
  * 核心思想: 将最小的数字替换到前面.
+ * 
+ * @see https://heleeos.com/blog/sorting-algorithm-theory.html#2选择排序
+ * @author liyu
  */
 public class SelectionSort {
 
@@ -17,6 +20,8 @@ public class SelectionSort {
         for(int i = 0; i < size; i++) {
             int min = data.get(i);
             int changeIndex = i;
+            
+            //找出未排序元素中最小的数字的下标
             for(int index = i + 1; index < size; index++) {
                int thisNumber = data.get(index);
                if(min > thisNumber) {
@@ -25,6 +30,7 @@ public class SelectionSort {
                }
             }
             
+            //交换未排序元素中最小数字和第一个数字
             if(changeIndex != i) {
                 int temp = data.get(i);
                 data.set(i, min);
