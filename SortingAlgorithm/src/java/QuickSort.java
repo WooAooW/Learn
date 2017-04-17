@@ -16,10 +16,9 @@ public class QuickSort {
     
     public static void main(String[] args) {
         List<Integer> data = getData(20);
-        data.forEach(num -> System.out.printf("%s,", num));
-        System.out.println();
+        System.err.println("数据:" + data);
         quickSortRecursive(data, 0, data.size() - 1);                
-        data.forEach(num -> System.out.printf("%s,", num));
+        System.err.println("结果:" + data);
     }
 
     /**
@@ -69,4 +68,6 @@ public class QuickSort {
         quickSortRecursive(data, start, left - 1);
         quickSortRecursive(data, left + 1, end);
     }
+    
+    
 }

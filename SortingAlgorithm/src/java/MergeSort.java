@@ -13,9 +13,9 @@ public class MergeSort {
 
     public static void main(String[] args) {
         List<Integer> data = getData(20);
-        System.out.println("数据:" + data);
+        System.err.println("数据:" + data);
         List<Integer> result = mergeSortRecursive(data, 0, data.size() - 1);
-        System.out.println("结果:" + result);
+        System.err.println("结果:" + result);
     }
 
     /**

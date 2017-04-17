@@ -13,9 +13,26 @@ public class SelectionSort {
 
     public static void main(String[] args) {
         List<Integer> data = getData(20);
-        data.forEach(num -> System.out.printf("%s,", num));
-        System.out.println();
-        
+        System.err.println("数据:" + data);
+        selectionSort(data);     
+        System.err.println("结果:" + data);
+    }
+    
+    /**
+     * 生成一组数据
+     */
+    public static List<Integer> getData(int n) {
+        List<Integer> list = new ArrayList<>(n);
+        for(int i = 0; i < n; i++)
+            list.add(i, i);
+        Collections.shuffle(list);//打乱顺序
+        return list;
+    }
+    
+    /**
+     * 选择排序
+     */
+    public static void selectionSort(List<Integer> data) {
         int size = data.size();
         for(int i = 0; i < size; i++) {
             int min = data.get(i);
@@ -41,18 +58,5 @@ public class SelectionSort {
             data.forEach(num -> System.out.printf("%s ", num));
             System.out.println();
         }
-        
-        data.forEach(num -> System.out.printf("%s,", num));
-    }
-    
-    /**
-     * 生成一组数据
-     */
-    public static List<Integer> getData(int n) {
-        List<Integer> list = new ArrayList<>(n);
-        for(int i = 0; i < n; i++)
-            list.add(i, i);
-        Collections.shuffle(list);//打乱顺序
-        return list;
     }
 }

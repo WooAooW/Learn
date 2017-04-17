@@ -13,9 +13,26 @@ public class ShellSort {
 
     public static void main(String[] args) {
         List<Integer> data = getData(20);
-        data.forEach(num -> System.out.printf("%s,", num));
-        System.out.println();
-        
+        System.err.println("数据:" + data);
+        shellSort(data);
+        System.err.println("结果:" + data);
+    }
+    
+    /**
+     * 生成一组数据
+     */
+    public static List<Integer> getData(int n) {
+        List<Integer> list = new ArrayList<>(n);
+        for(int i = 0; i < n; i++)
+            list.add(i, i);
+        Collections.shuffle(list);//打乱顺序
+        return list;
+    }
+    
+    /**
+     * 希尔排序
+     */
+    public static void shellSort(List<Integer> data) {
         int size = data.size();
         for(int gap = size >> 1; gap > 0; gap = gap >> 1) {
             
@@ -37,18 +54,5 @@ public class ShellSort {
             data.forEach(num -> System.out.printf("%s ", num));
             System.out.println();
         }
-        
-        data.forEach(num -> System.out.printf("%s,", num));
-    }
-    
-    /**
-     * 生成一组数据
-     */
-    public static List<Integer> getData(int n) {
-        List<Integer> list = new ArrayList<>(n);
-        for(int i = 0; i < n; i++)
-            list.add(i, i);
-        Collections.shuffle(list);//打乱顺序
-        return list;
     }
 }
