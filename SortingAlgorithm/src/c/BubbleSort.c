@@ -7,16 +7,19 @@
 
 /*
  * Bubble Sort 
- * 核心思想： 把权重最大的放到最后
+ * Core thing：Place the maximum value on the last postion of the array 
+ * at each  time 
  * */
 void  BubbleSort(int list[], int length)
 {
     int i, j;
     int temp, flag;
-    for(i = length - 1; i > 0; i--)/* the number of circle */
+    /*  the list[0] not need compare and move so the number
+     *  of loop == n-1  */
+    for(i = length - 1; i > 0; i--)
     {
         flag = true;
-        for(j = 0; j < i; j++) /* the number of compare */
+        for(j = 0; j < i; j++) /* compare to the rest of array that disordered*/
         {
             if(list[j] > list[j+1])
             {
@@ -28,20 +31,25 @@ void  BubbleSort(int list[], int length)
 
         }
 
-       if(flag)
+       if(flag) /* end  the sort method, if the array is already ordered */
            return;
     }
 
 }
+/* create a  array in heap memrory
+ * parameter : length is the sizeof array
+ * return :  return the address of array 
+ * */
 int*  CreateList(int length)
 {   
     int *list  = (int *)malloc(sizeof(int) *  length);
-    srand(time(NULL));
+    srand(time(NULL)); /* create a random value */
     int i;
     for(i = 0; i < LENGTH; i++)    
-        list[i] = rand()%50;
+        list[i] = rand()%50;/* get a <50 de  random value */
     return list;
 }
+/*  print a int array */
 void list_for_each(int * list, int length)
 {
     int i;
@@ -56,8 +64,5 @@ int main()
     int *list = CreateList(LENGTH);
     list_for_each(list, LENGTH);
     BubbleSort(list, LENGTH);
-    list_for_each(list, LENGTH);
-
 }
-
 
