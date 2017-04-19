@@ -55,6 +55,51 @@ void  QuickSort(int list[], int left, int right)
 
 
 }
+
+/*
+ * Classic implement QuickSort 
+ * Core thing : compare from end in array
+ * parameter : 
+ * list is a int array for sorting 
+ * left is the sort start index(start from 0 )
+ * right is the sort end index
+ * */
+void QuickSort_class(int list[], int left, int right)
+{
+    int l = left;
+    int r = right;
+    int temp = 0;
+if(left < right ) 
+{
+    temp = list[left];
+    while(l < r)  /* compara all value in list until find final position */
+    {
+
+        while(r>l && list[r]>temp) /* find a smaller than temp  */
+                r--;
+        /* the bigger than temp can be stored to list[l] 
+         * because the temp store the list[l]
+         * the list[l]  is the  fist postion  smaller than temp 
+         */
+            if(r > l) 
+            {
+                list[l]= list[r];
+                l++;
+            }
+             
+            while(l<r && list[l]<temp) 
+                l++;
+            if  (l < r)
+            {
+                list[r] = list[l];
+                r--;
+            }  
+        }
+    list[l] = temp;
+    QuickSort_class(list, left, l-1);
+    QuickSort_class(list, l+1, right);
+    }    
+}
 /* create a  array in heap memrory
  * parameter : length is the sizeof array
  * return :  return the address of array
@@ -82,9 +127,9 @@ int main()
 {
     int *list = CreateList(LENGTH);
     list_for_each(list, LENGTH);
-    QuickSort(list, 0, LENGTH -1);
+    QuickSort_class(list, 0, LENGTH -1);
     list_for_each(list, LENGTH);
-
+    return 0;
 }
 
 
