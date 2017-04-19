@@ -95,9 +95,9 @@ if(left < right )
                 r--;
             }  
         }
-    list[l] = temp;
-    QuickSort_class(list, left, l-1);
-    QuickSort_class(list, l+1, right);
+        list[l] = temp;
+        QuickSort_class(list, left, l-1);
+        QuickSort_class(list, l+1, right);
     }    
 }
 /* create a  array in heap memrory
