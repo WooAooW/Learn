@@ -58,11 +58,11 @@ void list_for_each(int * list, int length)
     printf(" \n");
 }
 
-
-int main()
-{
-    int *list = CreateList(LENGTH);
-    list_for_each(list, LENGTH);
-    BubbleSort(list, LENGTH);
-}
-
+/*
+*int main()
+*{
+*    int *list = CreateList(LENGTH);
+*    list_for_each(list, LENGTH);
+*    BubbleSort(list, LENGTH);
+*}
+*/
