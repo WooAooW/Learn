@@ -26,6 +26,6 @@
 - **ConnectDB**:操作数据库
 > 主要是学习下Python连接SQLite数据库,并建表,插值,查询
 
-###PyGame
+### PyGame
 - **HelloPyGame**:了解Pygame
 > 主要是学习下Pygame的基本操作
