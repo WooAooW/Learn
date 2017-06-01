@@ -1,4 +1,9 @@
 /**
+ * 类说明:
+ * 1. when 关键词的使用
+ * 2. is   关键词的使用
+ * 3. else 关键词的使用
+ *
  * Created by liyu on 2017/6/1.
  */
 fun main(args: Array<String>) {
