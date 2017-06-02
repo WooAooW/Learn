@@ -15,4 +15,6 @@ fun main(args: Array<String>) {
     val id:Int = 321
 
     val char:Char = '1'
+
+    var globl = "外部可以访问到的"
 }
