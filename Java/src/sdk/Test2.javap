@@ -1,0 +1,92 @@
+Classfile /Users/liyu/Workspace/Git/Learn/Java/src/sdk/Test2.class
+  Last modified 2017年10月10日; size 402 bytes
+  MD5 checksum 2768ddd716594ebd6fa41711971a6943
+  Compiled from "Test2.java"
+public class sdk.Test2
+  minor version: 0
+  major version: 53
+  flags: (0x0021) ACC_PUBLIC, ACC_SUPER
+  this_class: #2                          // sdk/Test2
+  super_class: #3                         // java/lang/Object
+  interfaces: 0, fields: 0, methods: 4, attributes: 1
+Constant pool:
+   #1 = Methodref          #3.#15         // java/lang/Object."<init>":()V
+   #2 = Class              #16            // sdk/Test2
+   #3 = Class              #17            // java/lang/Object
+   #4 = Utf8               <init>
+   #5 = Utf8               ()V
+   #6 = Utf8               Code
+   #7 = Utf8               LineNumberTable
+   #8 = Utf8               add
+   #9 = Utf8               (II)I
+  #10 = Utf8               getMax
+  #11 = Utf8               StackMapTable
+  #12 = Utf8               getMin
+  #13 = Utf8               SourceFile
+  #14 = Utf8               Test2.java
+  #15 = NameAndType        #4:#5          // "<init>":()V
+  #16 = Utf8               sdk/Test2
+  #17 = Utf8               java/lang/Object
+{
+  public sdk.Test2();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 7: 0
+
+  public static int add(int, int);
+    descriptor: (II)I
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: iload_0
+         1: iload_1
+         2: iadd
+         3: ireturn
+      LineNumberTable:
+        line 10: 0
+
+  private static int getMax(int, int);
+    descriptor: (II)I
+    flags: (0x000a) ACC_PRIVATE, ACC_STATIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: iload_0
+         1: iload_1
+         2: if_icmple     9
+         5: iload_0
+         6: goto          10
+         9: iload_1
+        10: ireturn
+      LineNumberTable:
+        line 14: 0
+      StackMapTable: number_of_entries = 2
+        frame_type = 9 /* same */
+        frame_type = 64 /* same_locals_1_stack_item */
+          stack = [ int ]
+
+  private static int getMin(int, int);
+    descriptor: (II)I
+    flags: (0x000a) ACC_PRIVATE, ACC_STATIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: iload_0
+         1: iload_1
+         2: if_icmpge     7
+         5: iload_0
+         6: ireturn
+         7: iload_1
+         8: ireturn
+      LineNumberTable:
+        line 18: 0
+        line 19: 5
+        line 21: 7
+      StackMapTable: number_of_entries = 1
+        frame_type = 7 /* same */
+}
+SourceFile: "Test2.java"
