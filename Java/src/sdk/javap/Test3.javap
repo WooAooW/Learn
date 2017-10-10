@@ -1,0 +1,131 @@
+Classfile /Users/liyu/Workspace/Git/Learn/Java/src/sdk/Test3.class
+  Last modified 2017年10月10日; size 836 bytes
+  MD5 checksum d50afc6427f0d1f3c96599c9eb53d542
+  Compiled from "Test3.java"
+public class sdk.Test3
+  minor version: 0
+  major version: 53
+  flags: (0x0021) ACC_PUBLIC, ACC_SUPER
+  this_class: #11                         // sdk/Test3
+  super_class: #12                        // java/lang/Object
+  interfaces: 0, fields: 0, methods: 3, attributes: 1
+Constant pool:
+   #1 = Methodref          #12.#26        // java/lang/Object."<init>":()V
+   #2 = Methodref          #12.#27        // java/lang/Object.hashCode:()I
+   #3 = Fieldref           #28.#29        // java/lang/System.out:Ljava/io/PrintStream;
+   #4 = Methodref          #30.#31        // java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+   #5 = Methodref          #11.#32        // sdk/Test3.getMax:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+   #6 = Methodref          #33.#34        // java/io/PrintStream.println:(Ljava/lang/Object;)V
+   #7 = String             #35            // abc
+   #8 = String             #36            // 123
+   #9 = Class              #37            // java/lang/String
+  #10 = Methodref          #33.#38        // java/io/PrintStream.println:(Ljava/lang/String;)V
+  #11 = Class              #39            // sdk/Test3
+  #12 = Class              #40            // java/lang/Object
+  #13 = Utf8               <init>
+  #14 = Utf8               ()V
+  #15 = Utf8               Code
+  #16 = Utf8               LineNumberTable
+  #17 = Utf8               getMax
+  #18 = Utf8               (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+  #19 = Utf8               StackMapTable
+  #20 = Utf8               Signature
+  #21 = Utf8               <T:Ljava/lang/Object;>(TT;TT;)TT;
+  #22 = Utf8               main
+  #23 = Utf8               ([Ljava/lang/String;)V
+  #24 = Utf8               SourceFile
+  #25 = Utf8               Test3.java
+  #26 = NameAndType        #13:#14        // "<init>":()V
+  #27 = NameAndType        #41:#42        // hashCode:()I
+  #28 = Class              #43            // java/lang/System
+  #29 = NameAndType        #44:#45        // out:Ljava/io/PrintStream;
+  #30 = Class              #46            // java/lang/Integer
+  #31 = NameAndType        #47:#48        // valueOf:(I)Ljava/lang/Integer;
+  #32 = NameAndType        #17:#18        // getMax:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+  #33 = Class              #49            // java/io/PrintStream
+  #34 = NameAndType        #50:#51        // println:(Ljava/lang/Object;)V
+  #35 = Utf8               abc
+  #36 = Utf8               123
+  #37 = Utf8               java/lang/String
+  #38 = NameAndType        #50:#52        // println:(Ljava/lang/String;)V
+  #39 = Utf8               sdk/Test3
+  #40 = Utf8               java/lang/Object
+  #41 = Utf8               hashCode
+  #42 = Utf8               ()I
+  #43 = Utf8               java/lang/System
+  #44 = Utf8               out
+  #45 = Utf8               Ljava/io/PrintStream;
+  #46 = Utf8               java/lang/Integer
+  #47 = Utf8               valueOf
+  #48 = Utf8               (I)Ljava/lang/Integer;
+  #49 = Utf8               java/io/PrintStream
+  #50 = Utf8               println
+  #51 = Utf8               (Ljava/lang/Object;)V
+  #52 = Utf8               (Ljava/lang/String;)V
+{
+  public sdk.Test3();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 7: 0
+
+  public static <T extends java.lang.Object> T getMax(T, T);
+    descriptor: (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=4, args_size=2
+         0: aload_0
+         1: invokevirtual #2                  // Method java/lang/Object.hashCode:()I
+         4: istore_2
+         5: aload_1
+         6: invokevirtual #2                  // Method java/lang/Object.hashCode:()I
+         9: istore_3
+        10: iload_2
+        11: iload_3
+        12: if_icmple     17
+        15: aload_0
+        16: areturn
+        17: aload_1
+        18: areturn
+      LineNumberTable:
+        line 10: 0
+        line 11: 5
+        line 12: 10
+        line 13: 15
+        line 15: 17
+      StackMapTable: number_of_entries = 1
+        frame_type = 253 /* append */
+          offset_delta = 17
+          locals = [ int, int ]
+    Signature: #21                          // <T:Ljava/lang/Object;>(TT;TT;)TT;
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=3, locals=1, args_size=1
+         0: getstatic     #3                  // Field java/lang/System.out:Ljava/io/PrintStream;
+         3: iconst_5
+         4: invokestatic  #4                  // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+         7: iconst_2
+         8: invokestatic  #4                  // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+        11: invokestatic  #5                  // Method getMax:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+        14: invokevirtual #6                  // Method java/io/PrintStream.println:(Ljava/lang/Object;)V
+        17: getstatic     #3                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        20: ldc           #7                  // String abc
+        22: ldc           #8                  // String 123
+        24: invokestatic  #5                  // Method getMax:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+        27: checkcast     #9                  // class java/lang/String
+        30: invokevirtual #10                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        33: return
+      LineNumberTable:
+        line 20: 0
+        line 21: 17
+        line 22: 33
+}
+SourceFile: "Test3.java"

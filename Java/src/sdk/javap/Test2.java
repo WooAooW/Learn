@@ -1,7 +1,13 @@
-package sdk;
+package sdk.javap;
 
 /**
+ * 包含以下内容
+ * 1.算数
+ * 2.私有方法
+ * 3.三目运算符
+ * 4.if判断表达式
  *
+ * javap -v -p Test2
  * Created by liyu on 2017/10/10.
  */
 public class Test2 {
