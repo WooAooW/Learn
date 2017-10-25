@@ -1,0 +1,281 @@
+Classfile /Users/liyu/Workspace/Git/Learn/Java/src/thread/UseFuture.class
+  Last modified Oct 25, 2017; size 2381 bytes
+  MD5 checksum 8b3892940ebafe0cd927d79084f65d47
+  Compiled from "UseFuture.java"
+public class thread.UseFuture
+  minor version: 0
+  major version: 53
+  flags: (0x0021) ACC_PUBLIC, ACC_SUPER
+  this_class: #27                         // thread/UseFuture
+  super_class: #28                        // java/lang/Object
+  interfaces: 0, fields: 0, methods: 4, attributes: 3
+Constant pool:
+    #1 = Methodref          #28.#43       // java/lang/Object."<init>":()V
+    #2 = Methodref          #27.#44       // thread/UseFuture.future:()V
+    #3 = Methodref          #45.#46       // java/util/concurrent/Executors.newFixedThreadPool:(I)Ljava/util/concurrent/ExecutorService;
+    #4 = InvokeDynamic      #0:#52        // #0:call:()Ljava/util/concurrent/Callable;
+    #5 = InterfaceMethodref #37.#53       // java/util/concurrent/ExecutorService.submit:(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
+    #6 = Fieldref           #54.#55       // java/lang/System.out:Ljava/io/PrintStream;
+    #7 = String             #56           // get
+    #8 = Methodref          #57.#58       // java/io/PrintStream.println:(Ljava/lang/String;)V
+    #9 = Long               3l
+   #11 = Fieldref           #59.#60       // java/util/concurrent/TimeUnit.SECONDS:Ljava/util/concurrent/TimeUnit;
+   #12 = InterfaceMethodref #38.#61       // java/util/concurrent/Future.get:(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
+   #13 = Class              #62           // java/lang/String
+   #14 = InvokeDynamic      #1:#65        // #1:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+   #15 = Class              #66           // java/util/concurrent/TimeoutException
+   #16 = String             #67           // 超时
+   #17 = InterfaceMethodref #38.#68       // java/util/concurrent/Future.cancel:(Z)Z
+   #18 = Class              #69           // java/lang/Exception
+   #19 = Methodref          #18.#70       // java/lang/Exception.printStackTrace:()V
+   #20 = Methodref          #57.#71       // java/io/PrintStream.println:(I)V
+   #21 = Long               1000l
+   #23 = Methodref          #72.#73       // java/lang/Thread.sleep:(J)V
+   #24 = String             #74           // success
+   #25 = Class              #75           // java/lang/InterruptedException
+   #26 = String             #76           // error
+   #27 = Class              #77           // thread/UseFuture
+   #28 = Class              #78           // java/lang/Object
+   #29 = Utf8               <init>
+   #30 = Utf8               ()V
+   #31 = Utf8               Code
+   #32 = Utf8               LineNumberTable
+   #33 = Utf8               main
+   #34 = Utf8               ([Ljava/lang/String;)V
+   #35 = Utf8               future
+   #36 = Utf8               StackMapTable
+   #37 = Class              #79           // java/util/concurrent/ExecutorService
+   #38 = Class              #80           // java/util/concurrent/Future
+   #39 = Utf8               print
+   #40 = Utf8               ()Ljava/lang/String;
+   #41 = Utf8               SourceFile
+   #42 = Utf8               UseFuture.java
+   #43 = NameAndType        #29:#30       // "<init>":()V
+   #44 = NameAndType        #35:#30       // future:()V
+   #45 = Class              #81           // java/util/concurrent/Executors
+   #46 = NameAndType        #82:#83       // newFixedThreadPool:(I)Ljava/util/concurrent/ExecutorService;
+   #47 = Utf8               BootstrapMethods
+   #48 = MethodHandle       6:#84         // REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+   #49 = MethodType         #85           //  ()Ljava/lang/Object;
+   #50 = MethodHandle       6:#86         // REF_invokeStatic thread/UseFuture.print:()Ljava/lang/String;
+   #51 = MethodType         #40           //  ()Ljava/lang/String;
+   #52 = NameAndType        #87:#88       // call:()Ljava/util/concurrent/Callable;
+   #53 = NameAndType        #89:#90       // submit:(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
+   #54 = Class              #91           // java/lang/System
+   #55 = NameAndType        #92:#93       // out:Ljava/io/PrintStream;
+   #56 = Utf8               get
+   #57 = Class              #94           // java/io/PrintStream
+   #58 = NameAndType        #95:#96       // println:(Ljava/lang/String;)V
+   #59 = Class              #97           // java/util/concurrent/TimeUnit
+   #60 = NameAndType        #98:#99       // SECONDS:Ljava/util/concurrent/TimeUnit;
+   #61 = NameAndType        #56:#100      // get:(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
+   #62 = Utf8               java/lang/String
+   #63 = MethodHandle       6:#101        // REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+   #64 = String             #102          // 结果：\u0001
+   #65 = NameAndType        #103:#104     // makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+   #66 = Utf8               java/util/concurrent/TimeoutException
+   #67 = Utf8               超时
+   #68 = NameAndType        #105:#106     // cancel:(Z)Z
+   #69 = Utf8               java/lang/Exception
+   #70 = NameAndType        #107:#30      // printStackTrace:()V
+   #71 = NameAndType        #95:#108      // println:(I)V
+   #72 = Class              #109          // java/lang/Thread
+   #73 = NameAndType        #110:#111     // sleep:(J)V
+   #74 = Utf8               success
+   #75 = Utf8               java/lang/InterruptedException
+   #76 = Utf8               error
+   #77 = Utf8               thread/UseFuture
+   #78 = Utf8               java/lang/Object
+   #79 = Utf8               java/util/concurrent/ExecutorService
+   #80 = Utf8               java/util/concurrent/Future
+   #81 = Utf8               java/util/concurrent/Executors
+   #82 = Utf8               newFixedThreadPool
+   #83 = Utf8               (I)Ljava/util/concurrent/ExecutorService;
+   #84 = Methodref          #112.#113     // java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+   #85 = Utf8               ()Ljava/lang/Object;
+   #86 = Methodref          #27.#114      // thread/UseFuture.print:()Ljava/lang/String;
+   #87 = Utf8               call
+   #88 = Utf8               ()Ljava/util/concurrent/Callable;
+   #89 = Utf8               submit
+   #90 = Utf8               (Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
+   #91 = Utf8               java/lang/System
+   #92 = Utf8               out
+   #93 = Utf8               Ljava/io/PrintStream;
+   #94 = Utf8               java/io/PrintStream
+   #95 = Utf8               println
+   #96 = Utf8               (Ljava/lang/String;)V
+   #97 = Utf8               java/util/concurrent/TimeUnit
+   #98 = Utf8               SECONDS
+   #99 = Utf8               Ljava/util/concurrent/TimeUnit;
+  #100 = Utf8               (JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
+  #101 = Methodref          #115.#116     // java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #102 = Utf8               结果：\u0001
+  #103 = Utf8               makeConcatWithConstants
+  #104 = Utf8               (Ljava/lang/String;)Ljava/lang/String;
+  #105 = Utf8               cancel
+  #106 = Utf8               (Z)Z
+  #107 = Utf8               printStackTrace
+  #108 = Utf8               (I)V
+  #109 = Utf8               java/lang/Thread
+  #110 = Utf8               sleep
+  #111 = Utf8               (J)V
+  #112 = Class              #117          // java/lang/invoke/LambdaMetafactory
+  #113 = NameAndType        #118:#122     // metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #114 = NameAndType        #39:#40       // print:()Ljava/lang/String;
+  #115 = Class              #123          // java/lang/invoke/StringConcatFactory
+  #116 = NameAndType        #103:#124     // makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #117 = Utf8               java/lang/invoke/LambdaMetafactory
+  #118 = Utf8               metafactory
+  #119 = Class              #126          // java/lang/invoke/MethodHandles$Lookup
+  #120 = Utf8               Lookup
+  #121 = Utf8               InnerClasses
+  #122 = Utf8               (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #123 = Utf8               java/lang/invoke/StringConcatFactory
+  #124 = Utf8               (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #125 = Class              #127          // java/lang/invoke/MethodHandles
+  #126 = Utf8               java/lang/invoke/MethodHandles$Lookup
+  #127 = Utf8               java/lang/invoke/MethodHandles
+{
+  public thread.UseFuture();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 10: 0
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=0, locals=1, args_size=1
+         0: invokestatic  #2                  // Method future:()V
+         3: return
+      LineNumberTable:
+        line 13: 0
+        line 14: 3
+
+  private static void future();
+    descriptor: ()V
+    flags: (0x000a) ACC_PRIVATE, ACC_STATIC
+    Code:
+      stack=4, locals=3, args_size=0
+         0: iconst_5
+         1: invokestatic  #3                  // Method java/util/concurrent/Executors.newFixedThreadPool:(I)Ljava/util/concurrent/ExecutorService;
+         4: astore_0
+         5: aload_0
+         6: invokedynamic #4,  0              // InvokeDynamic #0:call:()Ljava/util/concurrent/Callable;
+        11: invokeinterface #5,  2            // InterfaceMethod java/util/concurrent/ExecutorService.submit:(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
+        16: astore_1
+        17: getstatic     #6                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        20: ldc           #7                  // String get
+        22: invokevirtual #8                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        25: aload_1
+        26: ldc2_w        #9                  // long 3l
+        29: getstatic     #11                 // Field java/util/concurrent/TimeUnit.SECONDS:Ljava/util/concurrent/TimeUnit;
+        32: invokeinterface #12,  4           // InterfaceMethod java/util/concurrent/Future.get:(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
+        37: checkcast     #13                 // class java/lang/String
+        40: astore_2
+        41: getstatic     #6                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        44: aload_2
+        45: invokedynamic #14,  0             // InvokeDynamic #1:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+        50: invokevirtual #8                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        53: goto          81
+        56: astore_2
+        57: getstatic     #6                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        60: ldc           #16                 // String 超时
+        62: invokevirtual #8                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        65: aload_1
+        66: iconst_1
+        67: invokeinterface #17,  2           // InterfaceMethod java/util/concurrent/Future.cancel:(Z)Z
+        72: pop
+        73: goto          81
+        76: astore_2
+        77: aload_2
+        78: invokevirtual #19                 // Method java/lang/Exception.printStackTrace:()V
+        81: return
+      Exception table:
+         from    to  target type
+            17    53    56   Class java/util/concurrent/TimeoutException
+            17    53    76   Class java/lang/Exception
+      LineNumberTable:
+        line 20: 0
+        line 21: 5
+        line 23: 17
+        line 24: 25
+        line 25: 41
+        line 31: 53
+        line 26: 56
+        line 27: 57
+        line 28: 65
+        line 31: 73
+        line 29: 76
+        line 30: 77
+        line 32: 81
+      StackMapTable: number_of_entries = 3
+        frame_type = 255 /* full_frame */
+          offset_delta = 56
+          locals = [ class java/util/concurrent/ExecutorService, class java/util/concurrent/Future ]
+          stack = [ class java/util/concurrent/TimeoutException ]
+        frame_type = 83 /* same_locals_1_stack_item */
+          stack = [ class java/lang/Exception ]
+        frame_type = 4 /* same */
+
+  private static java.lang.String print();
+    descriptor: ()Ljava/lang/String;
+    flags: (0x000a) ACC_PRIVATE, ACC_STATIC
+    Code:
+      stack=2, locals=1, args_size=0
+         0: iconst_1
+         1: istore_0
+         2: iload_0
+         3: iinc          0, 1
+         6: iconst_5
+         7: if_icmpgt     26
+        10: getstatic     #6                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        13: iload_0
+        14: invokevirtual #20                 // Method java/io/PrintStream.println:(I)V
+        17: ldc2_w        #21                 // long 1000l
+        20: invokestatic  #23                 // Method java/lang/Thread.sleep:(J)V
+        23: goto          2
+        26: ldc           #24                 // String success
+        28: areturn
+        29: astore_0
+        30: ldc           #26                 // String error
+        32: areturn
+      Exception table:
+         from    to  target type
+             0    28    29   Class java/lang/InterruptedException
+      LineNumberTable:
+        line 39: 0
+        line 40: 2
+        line 41: 10
+        line 42: 17
+        line 44: 26
+        line 45: 29
+        line 46: 30
+      StackMapTable: number_of_entries = 3
+        frame_type = 252 /* append */
+          offset_delta = 2
+          locals = [ int ]
+        frame_type = 23 /* same */
+        frame_type = 255 /* full_frame */
+          offset_delta = 2
+          locals = []
+          stack = [ class java/lang/InterruptedException ]
+}
+SourceFile: "UseFuture.java"
+InnerClasses:
+  public static final #120= #119 of #125; // Lookup=class java/lang/invoke/MethodHandles$Lookup of class java/lang/invoke/MethodHandles
+BootstrapMethods:
+  0: #48 REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #49 ()Ljava/lang/Object;
+      #50 REF_invokeStatic thread/UseFuture.print:()Ljava/lang/String;
+      #51 ()Ljava/lang/String;
+  1: #63 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #64 结果：\u0001
