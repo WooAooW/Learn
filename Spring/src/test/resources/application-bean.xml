@@ -10,12 +10,12 @@
     
     <bean id="str2" class="java.lang.String"></bean>
     
-    <bean id="user1" scope="singleton" class="com.heleeos.bean.User" init-method="onCreate" destroy-method="onDestroy">
+    <bean id="user1" scope="singleton" class="com.heleeos.com.common.bean.User" init-method="onCreate" destroy-method="onDestroy">
         <property name="id" value="#{ T(java.lang.Math).random() * 100.0 }"/>
         <property name="username" value="单例用户"/>
     </bean>
     
-    <bean id="user2" scope="prototype" class="com.heleeos.bean.User" init-method="onCreate" destroy-method="onDestroy">
+    <bean id="user2" scope="prototype" class="com.heleeos.com.common.bean.User" init-method="onCreate" destroy-method="onDestroy">
         <property name="id" value="#{ T(java.lang.Math).random() * 100.0 }"/>
         <property name="username" value="非单例用户"/>
     </bean>

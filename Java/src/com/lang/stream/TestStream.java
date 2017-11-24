@@ -1,11 +1,10 @@
-package stream;
+package com.lang.stream;
 
-import bean.User;
-import bean.UserUtils;
+import com.common.bean.User;
+import com.common.util.UserUtils;
 
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  *

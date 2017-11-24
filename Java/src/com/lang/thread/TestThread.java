@@ -1,4 +1,4 @@
-package thread;
+package com.lang.thread;
 
 import org.junit.Test;
 
@@ -9,7 +9,7 @@ import org.junit.Test;
 public class TestThread {
 
     /**
-     * 新建的线程 thread 会在 run 方法执行完成后被杀掉
+     * 新建的线程 com.lang.thread 会在 run 方法执行完成后被杀掉
      */
     @Test
     public void run() {
@@ -25,7 +25,7 @@ public class TestThread {
     }
 
     /**
-     * 新建的线程 thread 会无限循环
+     * 新建的线程 com.lang.thread 会无限循环
      */
     public static void main(String[] args) {
         Thread thread = new Thread(getRunnable());

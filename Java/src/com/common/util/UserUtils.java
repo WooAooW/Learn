@@ -1,4 +1,6 @@
-package bean;
+package com.common.util;
+
+import com.common.bean.User;
 
 import java.util.Arrays;
 import java.util.List;

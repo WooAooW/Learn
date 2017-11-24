@@ -1,4 +1,4 @@
-package bean;
+package com.common.bean;
 
 /**
  * Created by liyu on 2017/6/3.

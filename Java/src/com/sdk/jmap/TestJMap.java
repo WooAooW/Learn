@@ -1,6 +1,6 @@
-package jvm;
+package com.sdk.jmap;
 
-import bean.User;
+import com.common.bean.User;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,17 +1,17 @@
-Classfile /Users/liyu/Workspace/Git/Learn/Java/src/thread/UseFuture.class
+Classfile /Users/liyu/Workspace/Git/Learn/Java/src/com.lang.thread/UseFuture.class
   Last modified Oct 25, 2017; size 2381 bytes
   MD5 checksum 8b3892940ebafe0cd927d79084f65d47
   Compiled from "UseFuture.java"
-public class thread.UseFuture
+public class com.lang.thread.UseFuture
   minor version: 0
   major version: 53
   flags: (0x0021) ACC_PUBLIC, ACC_SUPER
-  this_class: #27                         // thread/UseFuture
+  this_class: #27                         // com.lang.thread/UseFuture
   super_class: #28                        // java/lang/Object
   interfaces: 0, fields: 0, methods: 4, attributes: 3
 Constant pool:
     #1 = Methodref          #28.#43       // java/lang/Object."<init>":()V
-    #2 = Methodref          #27.#44       // thread/UseFuture.future:()V
+    #2 = Methodref          #27.#44       // com.lang.thread/UseFuture.future:()V
     #3 = Methodref          #45.#46       // java/util/concurrent/Executors.newFixedThreadPool:(I)Ljava/util/concurrent/ExecutorService;
     #4 = InvokeDynamic      #0:#52        // #0:call:()Ljava/util/concurrent/Callable;
     #5 = InterfaceMethodref #37.#53       // java/util/concurrent/ExecutorService.submit:(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
@@ -34,7 +34,7 @@ Constant pool:
    #24 = String             #74           // success
    #25 = Class              #75           // java/lang/InterruptedException
    #26 = String             #76           // error
-   #27 = Class              #77           // thread/UseFuture
+   #27 = Class              #77           // com.lang.thread/UseFuture
    #28 = Class              #78           // java/lang/Object
    #29 = Utf8               <init>
    #30 = Utf8               ()V
@@ -57,7 +57,7 @@ Constant pool:
    #47 = Utf8               BootstrapMethods
    #48 = MethodHandle       6:#84         // REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
    #49 = MethodType         #85           //  ()Ljava/lang/Object;
-   #50 = MethodHandle       6:#86         // REF_invokeStatic thread/UseFuture.print:()Ljava/lang/String;
+   #50 = MethodHandle       6:#86         // REF_invokeStatic com.lang.thread/UseFuture.print:()Ljava/lang/String;
    #51 = MethodType         #40           //  ()Ljava/lang/String;
    #52 = NameAndType        #87:#88       // call:()Ljava/util/concurrent/Callable;
    #53 = NameAndType        #89:#90       // submit:(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
@@ -84,7 +84,7 @@ Constant pool:
    #74 = Utf8               success
    #75 = Utf8               java/lang/InterruptedException
    #76 = Utf8               error
-   #77 = Utf8               thread/UseFuture
+   #77 = Utf8               com.lang.thread/UseFuture
    #78 = Utf8               java/lang/Object
    #79 = Utf8               java/util/concurrent/ExecutorService
    #80 = Utf8               java/util/concurrent/Future
@@ -93,7 +93,7 @@ Constant pool:
    #83 = Utf8               (I)Ljava/util/concurrent/ExecutorService;
    #84 = Methodref          #112.#113     // java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
    #85 = Utf8               ()Ljava/lang/Object;
-   #86 = Methodref          #27.#114      // thread/UseFuture.print:()Ljava/lang/String;
+   #86 = Methodref          #27.#114      // com.lang.thread/UseFuture.print:()Ljava/lang/String;
    #87 = Utf8               call
    #88 = Utf8               ()Ljava/util/concurrent/Callable;
    #89 = Utf8               submit
@@ -136,7 +136,7 @@ Constant pool:
   #126 = Utf8               java/lang/invoke/MethodHandles$Lookup
   #127 = Utf8               java/lang/invoke/MethodHandles
 {
-  public thread.UseFuture();
+  public com.lang.thread.UseFuture();
     descriptor: ()V
     flags: (0x0001) ACC_PUBLIC
     Code:
@@ -274,7 +274,7 @@ BootstrapMethods:
   0: #48 REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
     Method arguments:
       #49 ()Ljava/lang/Object;
-      #50 REF_invokeStatic thread/UseFuture.print:()Ljava/lang/String;
+      #50 REF_invokeStatic com.lang.thread/UseFuture.print:()Ljava/lang/String;
       #51 ()Ljava/lang/String;
   1: #63 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
     Method arguments:

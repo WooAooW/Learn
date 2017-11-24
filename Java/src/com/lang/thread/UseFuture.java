@@ -1,4 +1,4 @@
-package thread;
+package com.lang.thread;
 
 
 import java.util.concurrent.*;
