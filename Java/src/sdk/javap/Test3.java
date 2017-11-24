@@ -23,5 +23,7 @@ public class Test3 {
     public static void main(String[] args) {
         System.out.println(getMax(5, 2));
         System.out.println(getMax("a" + "b" + "c", "123"));
+
+        int a = new Integer(123);
     }
 }
