@@ -5,9 +5,10 @@ package com.test;
  */
 public class Test3 {
 
+
     static {
         B = 3;
-        A = B;  //还没有初始化, 不能直接使用
+        //A = B;  //还没有初始化, 不能直接使用
     }
 
     static int A = 1;

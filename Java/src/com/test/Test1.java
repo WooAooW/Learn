@@ -1,7 +1,6 @@
 package com.test;
 
 import java.io.File;
-import java.nio.file.Files;
 import java.util.stream.Stream;
 
 /**
@@ -12,8 +11,6 @@ public class Test1 {
     public static void main(String[] args) {
         //changeEncode("人物整形美化处理");
         changeEncode("»ÀœÒ’˚–Œ√¿ªØ¥¶¿Ì");
-        Files.copy()
-        java.io.BufferedReader
         //changeDirFiles();
     }
 
