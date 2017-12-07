@@ -18,6 +18,7 @@ public class TestLocalsTable {
     public static void main(String[] args) {
         int[] big_data = new int[128 * 1024 * 1024];
         System.out.println(big_data);
+
         //big_data = null; //如果加上这条，FullGC的时候 会把内存清掉
         System.out.println("before gc");
         System.gc();
