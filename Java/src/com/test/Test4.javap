@@ -1,0 +1,126 @@
+Classfile /Users/liyu/Workspace/Git/Learn/Java/src/com/test/Test4.class
+  Last modified Jan 2, 2018; size 785 bytes
+  MD5 checksum e160b0a4c98446732a60edee2b530c27
+  Compiled from "Test4.java"
+public class com.test.Test4
+  minor version: 0
+  major version: 52
+  flags: ACC_PUBLIC, ACC_SUPER
+Constant pool:
+   #1 = Methodref          #18.#28        // java/lang/Object."<init>":()V
+   #2 = Methodref          #29.#30        // java/lang/System.nanoTime:()J
+   #3 = Class              #31            // java/lang/Integer
+   #4 = Integer            -2147483648
+   #5 = Integer            2147483647
+   #6 = Double             1000000.0d
+   #8 = Fieldref           #29.#32        // java/lang/System.out:Ljava/io/PrintStream;
+   #9 = Class              #33            // java/lang/StringBuilder
+  #10 = Methodref          #9.#28         // java/lang/StringBuilder."<init>":()V
+  #11 = String             #34            // Time:
+  #12 = Methodref          #9.#35         // java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #13 = Methodref          #9.#36         // java/lang/StringBuilder.append:(D)Ljava/lang/StringBuilder;
+  #14 = String             #37            // ms
+  #15 = Methodref          #9.#38         // java/lang/StringBuilder.toString:()Ljava/lang/String;
+  #16 = Methodref          #39.#40        // java/io/PrintStream.println:(Ljava/lang/String;)V
+  #17 = Class              #41            // com/test/Test4
+  #18 = Class              #42            // java/lang/Object
+  #19 = Utf8               <init>
+  #20 = Utf8               ()V
+  #21 = Utf8               Code
+  #22 = Utf8               LineNumberTable
+  #23 = Utf8               main
+  #24 = Utf8               ([Ljava/lang/String;)V
+  #25 = Utf8               StackMapTable
+  #26 = Utf8               SourceFile
+  #27 = Utf8               Test4.java
+  #28 = NameAndType        #19:#20        // "<init>":()V
+  #29 = Class              #43            // java/lang/System
+  #30 = NameAndType        #44:#45        // nanoTime:()J
+  #31 = Utf8               java/lang/Integer
+  #32 = NameAndType        #46:#47        // out:Ljava/io/PrintStream;
+  #33 = Utf8               java/lang/StringBuilder
+  #34 = Utf8               Time:
+  #35 = NameAndType        #48:#49        // append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #36 = NameAndType        #48:#50        // append:(D)Ljava/lang/StringBuilder;
+  #37 = Utf8               ms
+  #38 = NameAndType        #51:#52        // toString:()Ljava/lang/String;
+  #39 = Class              #53            // java/io/PrintStream
+  #40 = NameAndType        #54:#55        // println:(Ljava/lang/String;)V
+  #41 = Utf8               com/test/Test4
+  #42 = Utf8               java/lang/Object
+  #43 = Utf8               java/lang/System
+  #44 = Utf8               nanoTime
+  #45 = Utf8               ()J
+  #46 = Utf8               out
+  #47 = Utf8               Ljava/io/PrintStream;
+  #48 = Utf8               append
+  #49 = Utf8               (Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #50 = Utf8               (D)Ljava/lang/StringBuilder;
+  #51 = Utf8               toString
+  #52 = Utf8               ()Ljava/lang/String;
+  #53 = Utf8               java/io/PrintStream
+  #54 = Utf8               println
+  #55 = Utf8               (Ljava/lang/String;)V
+{
+  public com.test.Test4();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 7: 0
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=4, locals=7, args_size=1
+         0: invokestatic  #2                  // Method java/lang/System.nanoTime:()J
+         3: lstore_1
+         4: ldc           #4                  // int -2147483648
+         6: istore_3
+         7: iload_3
+         8: ldc           #5                  // int 2147483647
+        10: if_icmpge     19
+        13: iinc          3, 1
+        16: goto          7
+        19: invokestatic  #2                  // Method java/lang/System.nanoTime:()J
+        22: lstore_3
+        23: lload_3
+        24: lload_1
+        25: lsub
+        26: l2d
+        27: ldc2_w        #6                  // double 1000000.0d
+        30: ddiv
+        31: dstore        5
+        33: getstatic     #8                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        36: new           #9                  // class java/lang/StringBuilder
+        39: dup
+        40: invokespecial #10                 // Method java/lang/StringBuilder."<init>":()V
+        43: ldc           #11                 // String Time:
+        45: invokevirtual #12                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        48: dload         5
+        50: invokevirtual #13                 // Method java/lang/StringBuilder.append:(D)Ljava/lang/StringBuilder;
+        53: ldc           #14                 // String ms
+        55: invokevirtual #12                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        58: invokevirtual #15                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        61: invokevirtual #16                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        64: return
+      LineNumberTable:
+        line 11: 0
+        line 13: 4
+        line 16: 19
+        line 17: 23
+        line 19: 33
+        line 20: 64
+      StackMapTable: number_of_entries = 2
+        frame_type = 253 /* append */
+          offset_delta = 7
+          locals = [ long, int ]
+        frame_type = 250 /* chop */
+          offset_delta = 11
+}
+SourceFile: "Test4.java"

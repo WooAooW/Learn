@@ -10,6 +10,7 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
@@ -23,7 +24,35 @@ public class UseStream {
 
     public static void stream1(List<DishItem> dishItemList) {
         dishItemList.stream()
-                    .filter(DishItem::isCanDisc)  /** 过滤打折 */
+                    .filter(new Predicate<DishItem>() {
+                        @Override
+                        public boolean test(DishItem dishItem) {
+
+                                boolean flag = dishItem.isCanDisc();
+                                return flag;
+
+                            }
+                        }
+                    )
+
+                
+                    .filter(dishItem -> {
+                        boolean flag = dishItem.isCanDisc();
+                        return flag;
+                    })
+
+
+                    .filter(dishItem -> dishItem.isCanDisc())
+
+
+                    .filter(DishItem::isCanDisc)
+
+
+
+
+
+
+            /** 过滤打折 */
                     .collect(toList());           /** 生成新的列表 */
 
         dishItemList.stream()

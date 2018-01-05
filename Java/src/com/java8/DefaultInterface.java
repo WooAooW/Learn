@@ -13,16 +13,8 @@ public interface DefaultInterface {
 
     int parseInt(String number);
 
-    default int[] read(int buffer) {
-        return IntStream.generate(this::read).limit(buffer).toArray();
-    }
-
-    default int parseInt(String number, int defaultNumber) {
-        try {
-            return parseInt(number);
-        } catch (Exception e) {
-            return defaultNumber;
-        }
+    default int sum() {
+        return 0;
     }
 
 }

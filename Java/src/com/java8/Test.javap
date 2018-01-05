@@ -1,0 +1,105 @@
+Classfile /Users/liyu/Workspace/Git/Learn/Java/src/com/java8/Test.class
+  Last modified Dec 29, 2017; size 583 bytes
+  MD5 checksum 1aa37f21d51875f29777849976fb4e9c
+  Compiled from "Test.java"
+public class com.java8.Test
+  minor version: 0
+  major version: 52
+  flags: ACC_PUBLIC, ACC_SUPER
+Constant pool:
+   #1 = Methodref          #6.#19         // java/lang/Object."<init>":()V
+   #2 = Methodref          #20.#21        // java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+   #3 = Fieldref           #22.#23        // java/lang/System.out:Ljava/io/PrintStream;
+   #4 = Methodref          #24.#25        // java/io/PrintStream.println:(Ljava/lang/Object;)V
+   #5 = Class              #26            // com/java8/Test
+   #6 = Class              #27            // java/lang/Object
+   #7 = Utf8               <init>
+   #8 = Utf8               ()V
+   #9 = Utf8               Code
+  #10 = Utf8               LineNumberTable
+  #11 = Utf8               sum
+  #12 = Utf8               StackMapTable
+  #13 = Class              #26            // com/java8/Test
+  #14 = Class              #28            // java/lang/Integer
+  #15 = Class              #27            // java/lang/Object
+  #16 = Class              #29            // java/lang/Throwable
+  #17 = Utf8               SourceFile
+  #18 = Utf8               Test.java
+  #19 = NameAndType        #7:#8          // "<init>":()V
+  #20 = Class              #28            // java/lang/Integer
+  #21 = NameAndType        #30:#31        // valueOf:(I)Ljava/lang/Integer;
+  #22 = Class              #32            // java/lang/System
+  #23 = NameAndType        #33:#34        // out:Ljava/io/PrintStream;
+  #24 = Class              #35            // java/io/PrintStream
+  #25 = NameAndType        #36:#37        // println:(Ljava/lang/Object;)V
+  #26 = Utf8               com/java8/Test
+  #27 = Utf8               java/lang/Object
+  #28 = Utf8               java/lang/Integer
+  #29 = Utf8               java/lang/Throwable
+  #30 = Utf8               valueOf
+  #31 = Utf8               (I)Ljava/lang/Integer;
+  #32 = Utf8               java/lang/System
+  #33 = Utf8               out
+  #34 = Utf8               Ljava/io/PrintStream;
+  #35 = Utf8               java/io/PrintStream
+  #36 = Utf8               println
+  #37 = Utf8               (Ljava/lang/Object;)V
+{
+  public com.java8.Test();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 6: 0
+
+  public synchronized void sum();
+    descriptor: ()V
+    flags: ACC_PUBLIC, ACC_SYNCHRONIZED
+    Code:
+      stack=2, locals=4, args_size=1
+         0: iconst_1
+         1: invokestatic  #2                  // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+         4: astore_1
+         5: aload_1
+         6: dup
+         7: astore_2
+         8: monitorenter
+         9: iconst_2
+        10: invokestatic  #2                  // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+        13: astore_1
+        14: aload_2
+        15: monitorexit
+        16: goto          24
+        19: astore_3
+        20: aload_2
+        21: monitorexit
+        22: aload_3
+        23: athrow
+        24: getstatic     #3                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        27: aload_1
+        28: invokevirtual #4                  // Method java/io/PrintStream.println:(Ljava/lang/Object;)V
+        31: return
+      Exception table:
+         from    to  target type
+             9    16    19   any
+            19    22    19   any
+      LineNumberTable:
+        line 10: 0
+        line 12: 5
+        line 13: 9
+        line 14: 14
+        line 16: 24
+        line 17: 31
+      StackMapTable: number_of_entries = 2
+        frame_type = 255 /* full_frame */
+          offset_delta = 19
+          locals = [ class com/java8/Test, class java/lang/Integer, class java/lang/Object ]
+          stack = [ class java/lang/Throwable ]
+        frame_type = 250 /* chop */
+          offset_delta = 4
+}
+SourceFile: "Test.java"
