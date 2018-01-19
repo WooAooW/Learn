@@ -1,0 +1,129 @@
+Classfile /Users/liyu/Workspace/Git/Learn/Java/src/com/test/Test5.class
+  Last modified Jan 11, 2018; size 637 bytes
+  MD5 checksum 9a13b1969cfd09019f4885188b7bc6ce
+  Compiled from "Test5.java"
+public class com.test.Test5
+  minor version: 0
+  major version: 52
+  flags: ACC_PUBLIC, ACC_SUPER
+Constant pool:
+   #1 = Methodref          #16.#33        // java/lang/Object."<init>":()V
+   #2 = Class              #34            // java/math/BigDecimal
+   #3 = Methodref          #2.#35         // java/math/BigDecimal."<init>":(I)V
+   #4 = Fieldref           #15.#36        // com/test/Test5.big1:Ljava/math/BigDecimal;
+   #5 = Long               2l
+   #7 = Methodref          #2.#37         // java/math/BigDecimal.valueOf:(J)Ljava/math/BigDecimal;
+   #8 = Fieldref           #15.#38        // com/test/Test5.big2:Ljava/math/BigDecimal;
+   #9 = String             #39            // 1
+  #10 = Fieldref           #15.#40        // com/test/Test5.text1:Ljava/lang/String;
+  #11 = String             #41            // 2
+  #12 = Fieldref           #15.#42        // com/test/Test5.text2:Ljava/lang/String;
+  #13 = Long               1123123l
+  #15 = Class              #43            // com/test/Test5
+  #16 = Class              #44            // java/lang/Object
+  #17 = Utf8               big1
+  #18 = Utf8               Ljava/math/BigDecimal;
+  #19 = Utf8               big2
+  #20 = Utf8               text1
+  #21 = Utf8               Ljava/lang/String;
+  #22 = Utf8               text2
+  #23 = Utf8               staticFild
+  #24 = Utf8               [I
+  #25 = Utf8               <init>
+  #26 = Utf8               ()V
+  #27 = Utf8               Code
+  #28 = Utf8               LineNumberTable
+  #29 = Utf8               main
+  #30 = Utf8               ([Ljava/lang/String;)V
+  #31 = Utf8               SourceFile
+  #32 = Utf8               Test5.java
+  #33 = NameAndType        #25:#26        // "<init>":()V
+  #34 = Utf8               java/math/BigDecimal
+  #35 = NameAndType        #25:#45        // "<init>":(I)V
+  #36 = NameAndType        #17:#18        // big1:Ljava/math/BigDecimal;
+  #37 = NameAndType        #46:#47        // valueOf:(J)Ljava/math/BigDecimal;
+  #38 = NameAndType        #19:#18        // big2:Ljava/math/BigDecimal;
+  #39 = Utf8               1
+  #40 = NameAndType        #20:#21        // text1:Ljava/lang/String;
+  #41 = Utf8               2
+  #42 = NameAndType        #22:#21        // text2:Ljava/lang/String;
+  #43 = Utf8               com/test/Test5
+  #44 = Utf8               java/lang/Object
+  #45 = Utf8               (I)V
+  #46 = Utf8               valueOf
+  #47 = Utf8               (J)Ljava/math/BigDecimal;
+{
+  java.math.BigDecimal big1;
+    descriptor: Ljava/math/BigDecimal;
+    flags:
+
+  java.math.BigDecimal big2;
+    descriptor: Ljava/math/BigDecimal;
+    flags:
+
+  java.lang.String text1;
+    descriptor: Ljava/lang/String;
+    flags:
+
+  java.lang.String text2;
+    descriptor: Ljava/lang/String;
+    flags:
+
+  static int[] staticFild;
+    descriptor: [I
+    flags: ACC_STATIC
+
+  public com.test.Test5();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=4, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: aload_0
+         5: new           #2                  // class java/math/BigDecimal
+         8: dup
+         9: iconst_1
+        10: invokespecial #3                  // Method java/math/BigDecimal."<init>":(I)V
+        13: putfield      #4                  // Field big1:Ljava/math/BigDecimal;
+        16: aload_0
+        17: ldc2_w        #5                  // long 2l
+        20: invokestatic  #7                  // Method java/math/BigDecimal.valueOf:(J)Ljava/math/BigDecimal;
+        23: putfield      #8                  // Field big2:Ljava/math/BigDecimal;
+        26: aload_0
+        27: ldc           #9                  // String 1
+        29: putfield      #10                 // Field text1:Ljava/lang/String;
+        32: aload_0
+        33: ldc           #11                 // String 2
+        35: putfield      #12                 // Field text2:Ljava/lang/String;
+        38: return
+      LineNumberTable:
+        line 9: 0
+        line 11: 4
+        line 13: 16
+        line 15: 26
+        line 17: 32
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=4, locals=6, args_size=1
+         0: ldc2_w        #13                 // long 1123123l
+         3: lstore_1
+         4: bipush        -123
+         6: istore_3
+         7: lload_1
+         8: iload_3
+         9: i2l
+        10: ladd
+        11: l2d
+        12: dstore        4
+        14: return
+      LineNumberTable:
+        line 22: 0
+        line 23: 4
+        line 24: 7
+        line 25: 14
+}
+SourceFile: "Test5.java"
