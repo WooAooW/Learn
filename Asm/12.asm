@@ -1,6 +1,6 @@
 ;同一个程序中有多个段
 
-assume cs:code
+assume cs:code, ds:data, ss:stack
 
 data segment
 	dw 0123h, 0456h, 0789h, 0abch, 0defh, 0cbah, 0987h, 0654h
