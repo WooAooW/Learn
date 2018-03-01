@@ -1,6 +1,6 @@
-package com.heleeos.netty;
+package com.heleeos.netty.demo1;
 
-import com.heleeos.netty.handler.ChannelInitializerHandler;
+import com.heleeos.netty.demo1.handler.ChannelInitializerHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.EventLoopGroup;
