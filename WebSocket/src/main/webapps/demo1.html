@@ -4,52 +4,57 @@
     <meta charset="UTF-8">
     <title>Netty WebSocket DEMO</title>
 </head>
-<body>
-<script type="text/javascript">
-    var socket;
-    if (window.WebSocket) {
-        socket = new WebSocket("ws://localhost:2048/ws");
-        socket.onmessage = function(event) {
-            var ta = document.getElementById('responseText');
-            ta.value = ta.value + '\n' + event.data
-        };
-        socket.onopen = function(event) {
-            var ta = document.getElementById('responseText');
-            ta.value = "连接开启!";
-        };
-        socket.onclose = function(event) {
-            var ta = document.getElementById('responseText');
-            ta.value = ta.value + "连接被关闭 onClose";
-        };
-    } else {
-        alert("你的浏览器不支持！");
-    }
-    function send(message) {
-        if (!window.WebSocket) {
-            return;
-        }
-        if (socket.readyState == WebSocket.OPEN) {
-            var params = {requestID: generateUUID(), serviceID: 'display-message', message : message};
-            socket.send(JSON.stringify(params));
-        } else {
-            alert("连接没有开启.");
-        }
-    }
+    <body>
+        <form onsubmit="return false;">
+            <input type="text" name="message" value="Hello, World!"><input  type="button" value="发送消息" onclick="send(this.form.message.value)">
+            <h3>输出：</h3>
+            <textarea id="responseText" style="width: 500px; height: 300px;"></textarea>
+            <input type="button" onclick="javascript:document.getElementById('responseText').value=''" value="清空">
+        </form>
 
-    function generateUUID() {
-        var d = new Date().getTime();
-        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-            var r = (d + Math.random()*16)%16 | 0;
-            d = Math.floor(d/16);
-            return (c=='x' ? r : (r&0x7|0x8)).toString(16);
-        });
-    }
-</script>
-<form onsubmit="return false;">
-    <input type="text" name="message" value="Hello, World!"><input  type="button" value="发送消息" onclick="send(this.form.message.value)">
-    <h3>输出：</h3>
-    <textarea id="responseText" style="width: 500px; height: 300px;"></textarea>
-    <input type="button" onclick="javascript:document.getElementById('responseText').value=''" value="清空">
-</form>
-</body>
+        <script type="text/javascript">
+            var socket;
+            var text = document.getElementById('responseText');
+
+            if (window.WebSocket) {
+                socket = new WebSocket("ws://localhost:2048/ws");
+                socket.onmessage = function(event) {
+                    appendMessage(event.data);
+                };
+                socket.onopen = function(event) {
+                    appendMessage("连接服务器");
+                };
+                socket.onclose = function(event) {
+                    appendMessage("服务器已关闭");
+                };
+            } else {
+                appendMessage("浏览器不支持WebSocket");
+            }
+
+            function appendMessage(value) {
+                text.value = text.value + '\n' + value;
+            }
+
+            function send(message) {
+                if (!window.WebSocket) {
+                    return;
+                }
+                if (socket.readyState == WebSocket.OPEN) {
+                    var params = {requestID: generateUUID(), serviceID: 'display-message', message : message};
+                    socket.send(JSON.stringify(params));
+                } else {
+                    appendMessage("没有连接服务器");
+                }
+            }
+
+            function generateUUID() {
+                var d = new Date().getTime();
+                return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                    var r = (d + Math.random()*16)%16 | 0;
+                    d = Math.floor(d/16);
+                    return (c=='x' ? r : (r&0x7|0x8)).toString(16);
+                });
+            }
+        </script>
+    </body>
 </html>

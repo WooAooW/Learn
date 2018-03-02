@@ -1,4 +1,4 @@
-package com.heleeos.netty.demo1.handler;
+package com.heleeos.netty.handler;
 
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelInitializer;

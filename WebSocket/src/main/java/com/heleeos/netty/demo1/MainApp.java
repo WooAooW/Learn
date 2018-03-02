@@ -1,6 +1,6 @@
 package com.heleeos.netty.demo1;
 
-import com.heleeos.netty.demo1.handler.ChannelInitializerHandler;
+import com.heleeos.netty.handler.ChannelInitializerHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.EventLoopGroup;
@@ -10,6 +10,8 @@ import org.apache.log4j.Logger;
 
 /**
  * Netty 服务器入口
+ *
+ * 一个简单的收发消息的服务器
  * Created by liyu on 01/03/2018.
  */
 public class MainApp {

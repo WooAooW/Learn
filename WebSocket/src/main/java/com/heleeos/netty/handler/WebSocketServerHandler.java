@@ -1,4 +1,4 @@
-package com.heleeos.netty.demo1.handler;
+package com.heleeos.netty.handler;
 
 import com.heleeos.netty.common.Code;
 import com.heleeos.netty.common.Request;
@@ -96,10 +96,6 @@ public class WebSocketServerHandler extends SimpleChannelInboundHandler<Object> 
             return;
         }
 
-        //本例程仅支持文本消息，不支持二进制消息
-        if (frame instanceof BinaryWebSocketFrame) {
-            throw new UnsupportedOperationException(String.format("%s frame types not supported", frame.getClass().getName()));
-        }
         if(frame instanceof TextWebSocketFrame) {
             // 返回应答消息
             String value = ((TextWebSocketFrame) frame).text();
@@ -112,6 +108,9 @@ public class WebSocketServerHandler extends SimpleChannelInboundHandler<Object> 
             response.putData("message", request.getMessage());
 
             context.channel().write(response.getTextWebSocketFrame());
+            return;
         }
+
+        throw new UnsupportedOperationException(String.format("不支持类型[%s]消息", frame.getClass().getName()));
     }
 }

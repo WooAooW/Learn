@@ -1,5 +1,7 @@
 package com.heleeos.netty.common;
 
+import com.google.gson.Gson;
+
 /**
  * 返回码
  * Created by liyu on 01/03/2018.
@@ -8,32 +10,30 @@ public enum  Code {
 
     success               (200, "成功"),
 
-    parameters_incorrect  (400, "参数不正确"),
-    parameters_invalid    (401, "特定参数不符合条件(eg:没有这个用户)"),
-    service_notfound      (402, "没有这个服务"),
-    node_unavailable      (403, "没有可用的服务节点"),
+    login                 (210, "上线请求"),
+    send_message          (211, "发送消息"),
+    receive_message       (212, "接受消息"),
+    logout                (213, "下线请求"),
 
-    error                 (500, "执行错误"),
-    authentication_fail   (501, "认证失败"),
-    roles_fail            (502, "授权失败"),
-    session_expiration    (503, "Session 过期"),
-    session_lose          (504, "Session 丢失"),
+    clint_removed         (300, "客户端被移除"),
 
-    timeout               (510, "调用超时"),
-    generate_return_error (511, "处理返回值错误"),
-    limit                 (512, "接口调用次数超过限制"),
-    limit_by_group        (513, "用户调用次数超过限制"),
+    parameters_incorrect  (400, "参数错误"),
+    username_exist        (401, "用户名已经存在"),
 
-    online                (1001, "客户端上线请求"),
-    send_message          (1002, "客户端发送'发送消息'请求"),
-    receive_message       (1003, "服务端发送'接收消息'请求"),
-    downline              (1004, "客户端下线请求");
+    server_error          (500, "执行错误"),
+    timeout               (510, "调用超时");
+
+    public Integer code;
 
     public String info;
-    public Integer code;
 
     Code(Integer code, String info) {
         this.info = info;
         this.code = code;
+    }
+
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
     }
 }

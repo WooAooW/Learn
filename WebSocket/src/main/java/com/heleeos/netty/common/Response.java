@@ -21,6 +21,13 @@ public class Response {
     /** 返回数据 */
     private Map<String, String> data = new HashMap<String, String>();
 
+    public Response() {}
+
+    public Response(Code code, String message) {
+        this.code = code;
+        this.message = message;
+    }
+
     public Code getCode() {
         return code;
     }
