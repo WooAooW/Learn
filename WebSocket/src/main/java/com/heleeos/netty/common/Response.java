@@ -1,5 +1,11 @@
 package com.heleeos.netty.common;
 
+import com.google.gson.Gson;
+import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
+
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 服务端返回的结果
  * Created by liyu on 01/03/2018.
@@ -13,7 +19,7 @@ public class Response {
     private String message;
 
     /** 返回数据 */
-    private Object data;
+    private Map<String, String> data = new HashMap<String, String>();
 
     public Code getCode() {
         return code;
@@ -31,11 +37,20 @@ public class Response {
         this.message = message;
     }
 
-    public Object getData() {
+    public Map<String, String> getData() {
         return data;
     }
 
-    public void setData(Object data) {
-        this.data = data;
+    public void putData(String key, String value) {
+        data.put(key, value);
+    }
+
+    public TextWebSocketFrame getTextWebSocketFrame() {
+        return new TextWebSocketFrame(new Gson().toJson(this));
+    }
+
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
     }
 }

@@ -6,6 +6,7 @@ import io.netty.channel.Channel;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import org.apache.log4j.Logger;
 
 /**
  * Netty 服务器入口
@@ -13,7 +14,11 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
  */
 public class MainApp {
 
+    private static Logger logger = Logger.getLogger(MainApp.class);
+
     public static void main(String[] args) {
+        logger.info("准备启动 WebSocket");
+
         EventLoopGroup group1 = new NioEventLoopGroup();
         EventLoopGroup group2 = new NioEventLoopGroup();
 
@@ -25,10 +30,10 @@ public class MainApp {
             Channel channel = serverBootstrap.bind(2048)
                                              .sync()
                                              .channel();
-            System.out.println("websocket server start at port:2048");
+            logger.info("WebSocket 服务开启");
             channel.closeFuture().sync();
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            logger.error("启动服务出现错误", e);
         } finally {
             group1.shutdownGracefully();
             group2.shutdownGracefully();

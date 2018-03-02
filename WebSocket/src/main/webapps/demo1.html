@@ -7,9 +7,6 @@
 <body>
 <script type="text/javascript">
     var socket;
-    if (!window.WebSocket) {
-        window.WebSocket = window.MozWebSocket;
-    }
     if (window.WebSocket) {
         socket = new WebSocket("ws://localhost:2048/ws");
         socket.onmessage = function(event) {
@@ -22,7 +19,7 @@
         };
         socket.onclose = function(event) {
             var ta = document.getElementById('responseText');
-            ta.value = ta.value + "连接被关闭";
+            ta.value = ta.value + "连接被关闭 onClose";
         };
     } else {
         alert("你的浏览器不支持！");
@@ -32,10 +29,20 @@
             return;
         }
         if (socket.readyState == WebSocket.OPEN) {
-            socket.send(message);
+            var params = {requestID: generateUUID(), serviceID: 'display-message', message : message};
+            socket.send(JSON.stringify(params));
         } else {
             alert("连接没有开启.");
         }
+    }
+
+    function generateUUID() {
+        var d = new Date().getTime();
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = (d + Math.random()*16)%16 | 0;
+            d = Math.floor(d/16);
+            return (c=='x' ? r : (r&0x7|0x8)).toString(16);
+        });
     }
 </script>
 <form onsubmit="return false;">
