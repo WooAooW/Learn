@@ -65,4 +65,9 @@ public class Request {
     public static Request fromJson(String text) {
         return new Gson().fromJson(text, Request.class);
     }
+
+    @Override
+    public String toString() {
+        return toJson();
+    }
 }

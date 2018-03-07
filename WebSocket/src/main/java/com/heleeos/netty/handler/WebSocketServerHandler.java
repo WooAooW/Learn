@@ -1,8 +1,6 @@
 package com.heleeos.netty.handler;
 
-import com.heleeos.netty.common.Code;
-import com.heleeos.netty.common.Request;
-import com.heleeos.netty.common.Response;
+import com.heleeos.netty.function.MessageHandler;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFuture;
@@ -23,6 +21,15 @@ public class WebSocketServerHandler extends SimpleChannelInboundHandler<Object> 
     private Logger logger = Logger.getLogger(getClass());
 
     private WebSocketServerHandshaker handshaker;
+
+    /**
+     * 消息处理器
+     */
+    private MessageHandler messageHandler;
+
+    public WebSocketServerHandler(MessageHandler messageHandler) {
+        this.messageHandler = messageHandler;
+    }
 
     @Override
     public void messageReceived(ChannelHandlerContext context, Object msg) throws Exception {
@@ -97,18 +104,10 @@ public class WebSocketServerHandler extends SimpleChannelInboundHandler<Object> 
         }
 
         if(frame instanceof TextWebSocketFrame) {
-            // 返回应答消息
-            String value = ((TextWebSocketFrame) frame).text();
-            logger.info("服务器接收到的信息:" + value);
-            Request request = Request.fromJson(value);
-
-            Response response = new Response();
-            response.setCode(Code.success);
-            response.setMessage("服务端收到信息");
-            response.putData("message", request.getMessage());
-
-            context.channel().write(response.getTextWebSocketFrame());
-            return;
+            if(messageHandler != null) {
+                messageHandler.handlerTextWebSocketFrame(context, (TextWebSocketFrame) frame);
+                return;
+            }
         }
 
         throw new UnsupportedOperationException(String.format("不支持类型[%s]消息", frame.getClass().getName()));

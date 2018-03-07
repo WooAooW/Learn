@@ -5,7 +5,6 @@
     <title>Netty WebSocket 聊天实例</title>
 </head>
 <script src="jquery.min.js" type="text/javascript"></script>
-<script src="map.js" type="text/javascript"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         var uuid = guid(); // uuid在一个会话唯一
@@ -24,7 +23,7 @@
             window.WebSocket = window.MozWebSocket;
         }
         if (window.WebSocket) {
-            socket = new WebSocket("ws://localhost:9090/");
+            socket = new WebSocket("ws://localhost:4096/");
             socket.onmessage = function(event) {
                 console.log("收到服务器消息:" + event.data);
                 if (event.data.indexOf("isSucc") != -1) {// 这里需要判断是客户端请求服务端返回后的消息（response）

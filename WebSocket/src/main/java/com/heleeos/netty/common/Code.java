@@ -19,6 +19,7 @@ public enum  Code {
 
     parameters_incorrect  (400, "参数错误"),
     username_exist        (401, "用户名已经存在"),
+    request_server_error  (402, "请求的服务不存在"),
 
     server_error          (500, "执行错误"),
     timeout               (510, "调用超时");

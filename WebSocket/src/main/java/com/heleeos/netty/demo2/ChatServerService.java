@@ -1,9 +1,8 @@
-package com.heleeos.netty.service;
+package com.heleeos.netty.demo2;
 
 import com.heleeos.netty.common.Client;
 import com.heleeos.netty.common.Code;
 import com.heleeos.netty.common.Response;
-import com.heleeos.netty.demo2.service.MessageService;
 import com.heleeos.netty.exception.ChatException;
 import io.netty.channel.ChannelHandlerContext;
 import org.apache.log4j.Logger;
@@ -17,12 +16,12 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class ChatServerService {
 
-    private static final Logger logger = Logger.getLogger(MessageService.class);
+    private static final Logger logger = Logger.getLogger(ChatServerService.class);
 
     /**
      * 当前连接的客户端
      */
-    private static final Map<String, Client> concurrentMap = new ConcurrentHashMap<String, Client>();
+    private static final Map<String, Client> concurrentMap = new ConcurrentHashMap<>();
 
     /**
      * 用户登录服务器

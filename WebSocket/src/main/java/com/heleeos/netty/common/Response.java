@@ -23,6 +23,11 @@ public class Response {
 
     public Response() {}
 
+    public Response(Code code) {
+        this.code = code;
+        this.message = code.info;
+    }
+
     public Response(Code code, String message) {
         this.code = code;
         this.message = message;
