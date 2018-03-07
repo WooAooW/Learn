@@ -1,13 +1,12 @@
-;将data段中的每个单词改为大写
-;需要用到 2 层循环，最外层的循环计数器 cx 保存到栈中
+;将 data 段中每个英文单词的 前4个变成大写
 
 assume cs:code, ds:data, ss:stack
 
 data segment
-	db 'ibm             '
-	db 'dec             '
-	db 'dos             '
-	db 'vax             '
+	db '1. display      '
+	db '2. brows        '
+	db '3. replace      '
+	db '4. modify       '
 data ends
 
 stack segment
@@ -30,11 +29,11 @@ code segment
 			push cx
 
 			mov si, 0
-			mov cx, 3
+			mov cx, 4
 			s2:
-				mov al, [bx + si]
+				mov al, [bx + si +3]
 				and al, 0DFh
-				mov [bx + si], al
+				mov [bx + si + 3], al
 
 				inc si
 				loop s2
