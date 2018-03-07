@@ -2,12 +2,10 @@ package com.heleeos.netty.service;
 
 import com.heleeos.netty.common.Client;
 import com.heleeos.netty.common.Code;
-import com.heleeos.netty.common.Request;
 import com.heleeos.netty.common.Response;
 import com.heleeos.netty.demo2.service.MessageService;
 import com.heleeos.netty.exception.ChatException;
 import io.netty.channel.ChannelHandlerContext;
-import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import org.apache.log4j.Logger;
 
 import java.util.Map;
@@ -44,6 +42,7 @@ public class ChatServerService {
 
     /**
      * 用户退出
+     * @param userName 用户名
      */
     public static void logout(String userName) {
         logger.info(String.format("用户[%s], 退出成功", userName));
@@ -52,23 +51,42 @@ public class ChatServerService {
 
     /**
      * 发送消息
+     * @param userName 用户名
+     * @param message 要发送的消息
      */
-    public void send(String userName, String message) throws ChatException {
+    public void sendToUser(String userName, String message) throws ChatException {
         Client client = concurrentMap.get(userName);
+        doSendMessage(client, message);
+    }
+
+    /**
+     * 给所有人群发消息
+     * @param message 要发送的消息
+     */
+    public void sendToAll(String message) {
+        concurrentMap.values().forEach(client -> {
+            try {
+                doSendMessage(client, message);
+            } catch (ChatException e) {
+                logger.error(e.getMessage());
+            }
+        });
+    }
+
+    /**
+     * 给客户端发送信息
+     * @param client 客户端
+     * @param message 信息
+     */
+    private void doSendMessage(Client client, String message) throws ChatException {
         ChannelHandlerContext context = client.getContext();
 
         if (context == null || context.isRemoved()) {
-            throw new ChatException(Code.clint_removed, String.format("客户端[%s]连接失败", userName));
+            throw new ChatException(Code.clint_removed, String.format("客户端[%s]连接失败", client.getName()));
         }
 
         Response response = new Response(Code.receive_message, message);
         context.channel().write(response.getTextWebSocketFrame());
         context.flush();
-    }
-
-    public void sendToAll(String message) {
-//        concurrentMap.forEach((name, client) -> {
-//
-//        });
     }
 }
