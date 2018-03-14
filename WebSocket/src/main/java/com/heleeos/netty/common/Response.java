@@ -12,6 +12,9 @@ import java.util.Map;
  */
 public class Response {
 
+    /** 服务ID */
+    private String serviceID;
+
     /** 返回结果码 */
     private Code code;
 
@@ -19,7 +22,7 @@ public class Response {
     private String message;
 
     /** 返回数据 */
-    private Map<String, String> data = new HashMap<String, String>();
+    private Map<String, String> data = new HashMap<>();
 
     public Response() {}
 
@@ -31,6 +34,18 @@ public class Response {
     public Response(Code code, String message) {
         this.code = code;
         this.message = message;
+    }
+
+    public String getServiceID() {
+        return serviceID;
+    }
+
+    public void setServiceID(String serviceID) {
+        this.serviceID = serviceID;
+    }
+
+    public void setData(Map<String, String> data) {
+        this.data = data;
     }
 
     public Code getCode() {

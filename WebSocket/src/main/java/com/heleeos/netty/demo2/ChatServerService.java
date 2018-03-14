@@ -9,6 +9,7 @@ import org.apache.log4j.Logger;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.stream.Collectors;
 
 /**
  * 聊天服务
@@ -26,17 +27,35 @@ public class ChatServerService {
     /**
      * 用户登录服务器
      */
-    public static void login(String userName, ChannelHandlerContext context) throws ChatException {
-        if(concurrentMap.containsKey(userName)) {
+    public static void login(String requestID, String userName, ChannelHandlerContext context) throws ChatException {
+        if(concurrentMap.containsKey(requestID)) {
             throw new ChatException(Code.username_exist);
         }
 
         Client client = new Client();
+        client.setId(requestID);
         client.setName(userName);
         client.setContext(context);
 
         logger.info(String.format("用户[%s], 登录成功", userName));
-        concurrentMap.put(userName, client);
+        concurrentMap.put(requestID, client);
+    }
+
+    /**
+     * 获取对应的用户
+     * @param requestID 用户请求ID
+     */
+    public static Client getUser(String requestID) {
+        return concurrentMap.get(requestID);
+    }
+
+    /**
+     * 获取所有用户信息
+     * key   -> id
+     * value -> name
+     */
+    public static Map<String, String> getAllUser() {
+        return concurrentMap.values().stream().collect(Collectors.toMap(Client::getId, Client::getName));
     }
 
     /**

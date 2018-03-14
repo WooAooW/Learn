@@ -16,6 +16,7 @@ public enum  Code {
     logout                (213, "下线请求"),
 
     clint_removed         (300, "客户端被移除"),
+    clint_logout          (301, "客户端未登录"),
 
     parameters_incorrect  (400, "参数错误"),
     username_exist        (401, "用户名已经存在"),
