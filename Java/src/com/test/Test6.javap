@@ -1,0 +1,75 @@
+Classfile /Users/liyu/Workspace/Git/Learn/Java/src/com/test/Test6.class
+  Last modified Mar 15, 2018; size 493 bytes
+  MD5 checksum b3203210457b6417d9e3a863d97d3069
+  Compiled from "Test6.java"
+public class com.test.Test6
+  minor version: 0
+  major version: 52
+  flags: ACC_PUBLIC, ACC_SUPER
+Constant pool:
+   #1 = Methodref          #2.#17         // java/lang/Object."<init>":()V
+   #2 = Class              #18            // java/lang/Object
+   #3 = String             #19            // java.lang.Object
+   #4 = Methodref          #20.#21        // java/lang/Class.forName:(Ljava/lang/String;)Ljava/lang/Class;
+   #5 = Methodref          #20.#22        // java/lang/Class.newInstance:()Ljava/lang/Object;
+   #6 = Class              #23            // com/test/Test6
+   #7 = Utf8               <init>
+   #8 = Utf8               ()V
+   #9 = Utf8               Code
+  #10 = Utf8               LineNumberTable
+  #11 = Utf8               main
+  #12 = Utf8               ([Ljava/lang/String;)V
+  #13 = Utf8               Exceptions
+  #14 = Class              #24            // java/lang/Exception
+  #15 = Utf8               SourceFile
+  #16 = Utf8               Test6.java
+  #17 = NameAndType        #7:#8          // "<init>":()V
+  #18 = Utf8               java/lang/Object
+  #19 = Utf8               java.lang.Object
+  #20 = Class              #25            // java/lang/Class
+  #21 = NameAndType        #26:#27        // forName:(Ljava/lang/String;)Ljava/lang/Class;
+  #22 = NameAndType        #28:#29        // newInstance:()Ljava/lang/Object;
+  #23 = Utf8               com/test/Test6
+  #24 = Utf8               java/lang/Exception
+  #25 = Utf8               java/lang/Class
+  #26 = Utf8               forName
+  #27 = Utf8               (Ljava/lang/String;)Ljava/lang/Class;
+  #28 = Utf8               newInstance
+  #29 = Utf8               ()Ljava/lang/Object;
+{
+  public com.test.Test6();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 6: 0
+
+  public static void main(java.lang.String[]) throws java.lang.Exception;
+    descriptor: ([Ljava/lang/String;)V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=4, args_size=1
+         0: new           #2                  // class java/lang/Object
+         3: dup
+         4: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         7: astore_1
+         8: ldc           #3                  // String java.lang.Object
+        10: invokestatic  #4                  // Method java/lang/Class.forName:(Ljava/lang/String;)Ljava/lang/Class;
+        13: astore_2
+        14: aload_2
+        15: invokevirtual #5                  // Method java/lang/Class.newInstance:()Ljava/lang/Object;
+        18: astore_3
+        19: return
+      LineNumberTable:
+        line 9: 0
+        line 11: 8
+        line 12: 14
+        line 14: 19
+    Exceptions:
+      throws java.lang.Exception
+}
+SourceFile: "Test6.java"

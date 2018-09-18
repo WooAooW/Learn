@@ -50,6 +50,9 @@ work/
 *.iml
 .idea/
 
+# vs Code #
+.vscode/
+
 # target #
 classes/
 out/
