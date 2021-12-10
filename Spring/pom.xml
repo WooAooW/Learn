@@ -10,7 +10,7 @@
 
     <properties>
         <spring.version>4.3.5.RELEASE</spring.version>
-        <logger.version>2.7</logger.version>
+        <logger.version>2.15.0</logger.version>
     </properties>
 
     <dependencies>
